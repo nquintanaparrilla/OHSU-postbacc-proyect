@@ -11,9 +11,11 @@ Figure 1. An IncuCyte S3 imaged 36 regions of interest (ROIs) of 16 wells every 
 ## 2. Stabilizing
 A FIJI macro script uses the StackReg and TurboReg plugins register all images like an image sequence and reduce shakiness. It facilitates cell visualization when observation proliferation over time. This is necessary because every image taken at the same ROI, regardless of the interval, will be positioned slightly differently due to the IncuCyte S3’s processing and camera positioning, and it helps the Cellpose model segment more efficiently.
 
-![Demo](images/A2_1_sorted.gif)
+<img src="images/A2_1_sorted.gif" width="0=400" height="400">
 Figure 2. Image sequence A2_1 before stabilizing step.
 
+<img src="images/A2_1_stabilized.gif" width="500" height="400">
+Figure 3. Image sequence A2_1 after stabilizing step
 
 
 ## 3. Cropping
