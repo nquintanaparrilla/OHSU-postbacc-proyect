@@ -56,13 +56,13 @@ Figure 6. Generated masks using Cellpose [GUI].
 
 ## 6. Counting ([cell_counting.py](image_analysis/cell_counting.py))
 Finally, this script counts all the generated masks from an ROI as cells and outputs 2 csv files.
-###1. Masks per ROI: This gives you cell counts per interval for each individual ROI. This can be useful for checking how well the Cellpose model is performing by comparing the outputs from this file to ground truths masks.
+#### 1. Masks per ROI: This gives you cell counts per time interval for each individual ROI. This can be useful for checking how well the Cellpose model is performing by comparing the outputs from this file to ground truths masks.
 | Well Name | 0 | 0.5 | ... | 48.0
 |-----------|:---:|:---:|:---:|----:|
 |A2_1       | 76 | 81 | ... | 854 |
 |A2_2       | 89 | 96 | ... | 1084 |
 
-###1. Masks per well: This summs up all the cell counts per well using the previous csv file. 
+#### 2. Masks per well: This sums up all the cell counts per well using the previous csv file. 
 | Well Name | 0 | 0.5 | ... | 48.0
 |-----------|:---:|:---:|:---:|----:|
 |A2       | 3903 | 4125 | ... | 43543 |
