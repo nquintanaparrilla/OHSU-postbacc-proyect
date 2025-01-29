@@ -39,3 +39,6 @@ def sort_exported_incucyte_images(experiment_plate):
                 print(f"Moved {file} to {well_folder}\n")
             else:
                 print(f"Pattern not found for file: {file}\n")
+
+sort_exported_incucyte_images(experiment_plate='MC00701')
+# MC00701 is the name of the folder where I initially exported all of my images. This follows a labeling protocol for the EGF dose response experiments I conducted with MCF10As
