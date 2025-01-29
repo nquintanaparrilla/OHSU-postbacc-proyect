@@ -1,10 +1,21 @@
 # Project title: Evaluating phenotypic and molecular responses in MCF10A wild type and BRCA1 (185delAG/+) 
 
 ## Background
-Breast cancers can develop and progress due to the irregularities in their microenvironments and intrinsic dysregulation of epithelial cells. This can disrupt some of the key hallmarks of cancer that include cell proliferation, cell-cell interactions and extracellular signaling[2,3]. The BRCA1 gene mutation accounts for about 40-45% of hereditary breast cancers[4]. BRCA1 is a key participant in cell cycle progression and DNA damage response5. However, the role of the BRCA1 mutation in the dysregulation of these epithelial cels in relation to extracellular signaling is not well understood. Our hypothesis states that extracellular signals like ligands and cytokines promote cancer-associated phenotypes in BRCA1-mutant epithelial cells.
+Breast cancers can develop and progress due to the irregularities in their microenvironments and intrinsic dysregulation of epithelial cells. This can disrupt some of the key hallmarks of cancer that include cell proliferation, cell-cell interactions and extracellular signaling[3,4]. The BRCA1 gene mutation accounts for about 40-45% of hereditary breast cancers[5]. BRCA1 is a key participant in cell cycle progression and DNA damage response[7]. However, the role of the BRCA1 mutation in the dysregulation of these epithelial cels in relation to extracellular signaling is not well understood. Our hypothesis states that extracellular signals like ligands and cytokines promote cancer-associated phenotypes in BRCA1-mutant epithelial cells. To understand normal and mutated cellular behavior through extracellular signaling and proliferation rates, three signaling factors were selected because of their abilities to promote or inhibit cell proliferation: epidermal growth factor (EGF), transforming growth factor β (TGFβ) and interferon-γ (IFNγ). Most importantly, EGF is implicated in the development and growth of mammary glands[6], making it one of the most common growth factors in mammary epithelial cells. Hence, MFC10As are known to require EGF to proliferate[2], it was important to test for EGF sensitivity through EGF dose response experiments before conducting ligand combination treatments with a steady dose of EGF. 
 
 ## Methods for phenotypic responses
 
+<img src="images/methods1.png" width="500" height="100">
+Figure 1. Experiment plate media rinse flow 
+<p></p>
+Cells were seeded at 4000 per well with growth media (DMEM/F12, horse serum, rhEGF, hydrocortisone, cholera toxin and insulin) for 7 hours on a 24 well-plate cross compatible with the IncuCyte S3 and the InCell Analyzer 6000, both provided by the Heiser Lab at Oregon Health and Science University (OHSU). Then, cells were rinsed with experimental media, growth media without rhEGF and insulin, and incubated at 37C for 17 hours. Finally, the following concentrations of EGF were administered: 1ng/mL, 2ng/mL, 3ng/mL, 6ng/mL, 10ng/mL, 12ng/mL and 20ng/mL. 
+
+<p></p>
+
+<p align="center">
+  <img src="images/plate_map.png" width="700" height="450">
+  </p>
+Figure 2. EGF experiment plate map
 
 ## 1. Sorting ([raw_sort.py](image_analysis/raw_sort.py))
 For personal preference, I organized all of the raw images obtained by the IncuCyte using this script. This sorted all the raw images into their respective folders following by the well plate's letter, well number and region of interest (ROI).
@@ -59,12 +70,14 @@ Finally, this script counts all the generated masks from an ROI as cells and out
 
 # Future objectives:
 1. Design a python script that can perform the same as the FIJI macro stabilizing script for faster processing.
-2. 
+2. Make the counting step 6a and a new step 6b for motility. This step would require a script that uses the segmentation masks to track the cells' positions in an ROI image and calculates how many pixels per second that each cell is moving. 
 
 # References:
 1. Gross, S.M., Dane, M.A., Smith, R.L. et al. A multi-omic analysis of MCF10A cells provides a resource for integrative assessment of ligand-mediated molecular and phenotypic responses. Commun Biol 5, 1066 (2022). https://doi.org/10.1038/s42003-022-03975-9
-2. Hanahan, D. (2022). Hallmarks of Cancer: New Dimensions. Cancer discovery, 12(1), 31-46.
-3. Hanahan, D., & Weinberg, R. A. (2011). Hallmarks of Cancer: The Next Generation. Cell, 144(5), 646-674.
-4. Pachitariu, M., Stringer, C. Cellpose 2.0: how to train your own model. Nat Methods 19, 1634–1641 (2022). https://doi.org/10.1038/s41592-022-01663-4
-5.	Wu, J., Lu, L. Y., & Yu, X. (2010). The role of BRCA1 in DNA damage response. Protein & cell, 1, 117-123.
+2. Gupta, A., Hunt, C. R., Chakraborty, S., Pandita, R. K., Yordy, J., Ramnarain, D. B., ... & Pandita, T. K. (2014). Role of 53BP1 in the regulation of DNA double-strand break repair pathway choice. Radiation research, 181(1), 1-8.
+3. Hanahan, D. (2022). Hallmarks of Cancer: New Dimensions. Cancer discovery, 12(1), 31-46.
+4. Hanahan, D., & Weinberg, R. A. (2011). Hallmarks of Cancer: The Next Generation. Cell, 144(5), 646-674.
+5. Pachitariu, M., Stringer, C. Cellpose 2.0: how to train your own model. Nat Methods 19, 1634–1641 (2022). https://doi.org/10.1038/s41592-022-01663-4
+6. 19.	Wee, P., & Wang, Z. (2017). Epidermal growth factor receptor cell proliferation signaling pathways. Cancers, 9(5), 52.
+7.	Wu, J., Lu, L. Y., & Yu, X. (2010). The role of BRCA1 in DNA damage response. Protein & cell, 1, 117-123.
 
