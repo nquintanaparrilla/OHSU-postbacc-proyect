@@ -17,6 +17,7 @@ Cells were seeded at 4000 per well with growth media (DMEM/F12, horse serum, rhE
   </p>
 Figure 2. EGF experiment plate map
 
+# Image Analysis Pipeline
 ## 1. Sorting ([raw_sort.py](image_analysis/raw_sort.py))
 For personal preference, I organized all of the raw images obtained by the IncuCyte using this script. This sorted all the raw images into their respective folders following by the well plate's letter, well number and region of interest (ROI).
 
