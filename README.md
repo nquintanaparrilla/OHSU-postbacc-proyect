@@ -56,22 +56,19 @@ It is crucial to have a trained model for this step. A Cellpose model can be tra
 Figure 6. Generated masks using Cellpose [GUI].
 
 ## 6. Counting ([cell_counting.py](image_analysis/cell_counting.py))
-Finally, this script counts all the generated masks from an ROI as cells and outputs 2 csv files.
-#### 1. Masks per ROI: This gives you cell counts per time interval for each individual ROI. This can be useful for checking how well the Cellpose model is performing by comparing the outputs from this file to ground truths masks.
+Finally, this script counts all the generated masks from an ROI as cells.
+#### Masks per ROI output: This gives you cell counts per time interval for each individual ROI. This can be useful for checking how well the Cellpose model is performing by comparing the outputs from this file to ground truths masks.
 | Well Name | 0 | 0.5 | ... | 48.0
 |-----------|:---:|:---:|:---:|----:|
 |A2_1       | 76 | 81 | ... | 854 |
 |A2_2       | 89 | 96 | ... | 1084 |
 
-#### 2. Masks per well: This sums up all the cell counts per well using the previous csv file. 
-| Well Name | 0 | 0.5 | ... | 48.0
-|-----------|:---:|:---:|:---:|----:|
-|A2       | 3903 | 4125 | ... | 43543 |
-|A3       | 4091 | 4245 | ... | 44532 |
 
 # Future objectives:
 1. Design a python script that can perform the same as the FIJI macro stabilizing script for faster processing.
 2. Make the counting step 6a and a new step 6b for motility. This step would require a script that uses the segmentation masks to track the cells' positions in an ROI image and calculates how many pixels per second that each cell is moving. 
+
+
 
 # References:
 1. Gross, S.M., Dane, M.A., Smith, R.L. et al. A multi-omic analysis of MCF10A cells provides a resource for integrative assessment of ligand-mediated molecular and phenotypic responses. Commun Biol 5, 1066 (2022). https://doi.org/10.1038/s42003-022-03975-9
