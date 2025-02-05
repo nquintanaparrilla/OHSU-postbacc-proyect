@@ -63,6 +63,18 @@ Finally, this script counts all the generated masks from an ROI as cells.
 |A2_1       | 76 | 81 | ... | 854 |
 |A2_2       | 89 | 96 | ... | 1084 |
 
+## Sample videos after stabilization and cropping:
+[![MCF10A WT - No EGF](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=-XLfIhz3GHA&ab_channel=NataliaQuintanaParrilla)]
+
+
+[![MCF10A WT - 10ng/mL](https://youtu.be/HWFD3kKy6NY)]
+
+
+[![MCF10A BRCA1+/- No EGF](https://youtu.be/WdU7pWYCmfU)]
+
+
+[![MCF10A BRCA1+/- - 10ng/mL](https://youtu.be/3sQ2YhjJNU0)]
+
 
 # Future objectives:
 1. Design a python script that can perform the same as the FIJI macro stabilizing script for faster processing.
@@ -76,6 +88,6 @@ Finally, this script counts all the generated masks from an ROI as cells.
 3. Hanahan, D. (2022). Hallmarks of Cancer: New Dimensions. Cancer discovery, 12(1), 31-46.
 4. Hanahan, D., & Weinberg, R. A. (2011). Hallmarks of Cancer: The Next Generation. Cell, 144(5), 646-674.
 5. Pachitariu, M., Stringer, C. Cellpose 2.0: how to train your own model. Nat Methods 19, 1634–1641 (2022). https://doi.org/10.1038/s41592-022-01663-4
-6. 19.	Wee, P., & Wang, Z. (2017). Epidermal growth factor receptor cell proliferation signaling pathways. Cancers, 9(5), 52.
-7.	Wu, J., Lu, L. Y., & Yu, X. (2010). The role of BRCA1 in DNA damage response. Protein & cell, 1, 117-123.
+6. Wee, P., & Wang, Z. (2017). Epidermal growth factor receptor cell proliferation signaling pathways. Cancers, 9(5), 52.
+7. Wu, J., Lu, L. Y., & Yu, X. (2010). The role of BRCA1 in DNA damage response. Protein & cell, 1, 117-123.
 
