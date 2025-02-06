@@ -4,45 +4,52 @@
 Breast cancers can develop and progress due to the irregularities in their microenvironments and intrinsic dysregulation of epithelial cells. This can disrupt some of the key hallmarks of cancer that include cell proliferation, cell-cell interactions and extracellular signaling[3,4]. The BRCA1 gene mutation accounts for about 40-45% of hereditary breast cancers[5]. BRCA1 is a key participant in cell cycle progression and DNA damage response[7]. However, the role of the BRCA1 mutation in the dysregulation of these epithelial cels in relation to extracellular signaling is not well understood. Our hypothesis states that extracellular signals like ligands and cytokines promote cancer-associated phenotypes in BRCA1-mutant epithelial cells. To understand normal and mutated cellular behavior through extracellular signaling and proliferation rates, three signaling factors were selected because of their abilities to promote or inhibit cell proliferation: epidermal growth factor (EGF), transforming growth factor β (TGFβ) and interferon-γ (IFNγ). Most importantly, EGF is implicated in the development and growth of mammary glands[6], making it one of the most common growth factors in mammary epithelial cells. Hence, MFC10As are known to require EGF to proliferate[2], it was important to test for EGF sensitivity through EGF dose response experiments before conducting ligand combination treatments with a steady dose of EGF. 
 
 ## Methods for phenotypic responses
-
-<img src="images/methods1.png" width="500" height="100">
-Figure 1. Experiment plate media rinse flow 
+ Figure 1. Experiment plate media rinse flow 
+<p align="center">
+  <img src="images/methods1.png" width="500" height="100"> 
+  </p>
 <p></p>
-Cells were seeded at 4000 per well with growth media (DMEM/F12, horse serum, rhEGF, hydrocortisone, cholera toxin and insulin) for 7 hours on a 24 well-plate cross compatible with the IncuCyte S3 and the InCell Analyzer 6000, both provided by the Heiser Lab at Oregon Health and Science University (OHSU). Then, cells were rinsed with experimental media, growth media without rhEGF and insulin, and incubated at 37C for 17 hours. Finally, the following concentrations of EGF were administered: 1ng/mL, 2ng/mL, 3ng/mL, 6ng/mL, 10ng/mL, 12ng/mL and 20ng/mL. 
-
+Cells were seeded at 4000 per well with growth media (DMEM/F12, horse serum, rhEGF, hydrocortisone, cholera toxin and insulin) for 7 hours on a 24 well-plate cross compatible with the IncuCyte S3 and the InCell Analyzer 6000, both provided by the Heiser Lab at Oregon Health and Science University (OHSU). Then, cells were rinsed with experimental media, growth media without rhEGF and insulin, and incubated at 37C for 17 hours. Finally, the following concentrations of EGF were administered: 1ng/mL, 2ng/mL, 3ng/mL, 6ng/mL, 10ng/mL, 12ng/mL and 20ng/mL.
 <p></p>
 
+Figure 2. EGF experiment plate map
 <p align="center">
   <img src="images/plate_map.png" width="700" height="450">
   </p>
-Figure 2. EGF experiment plate map
+
 
 # Image Analysis Pipeline for Live-Cell Imaging Data
 ## 1. Sorting ([raw_sort.py](image_analysis/raw_sort.py))
 For personal preference, I organized all of the raw images obtained by the IncuCyte using this script. This sorted all the raw images into their respective folders following by the well plate's letter, well number and region of interest (ROI).
 
-![alt text](https://github.com/nquintanaparrilla/OHSU-postbacc-proyect/blob/d82a9f91822014748dbf2f14079faa0709c2cf97/images/sorting_example.png)
 Figure 1. An IncuCyte S3 imaged 36 regions of interest (ROIs) of 16 wells every 30 minutes for 48 hours resulting in 55,872 live-cell images. The labeling image format indicates the well, the ROI and the time interval. So, for the example, the label indicates that the image belongs to the A1 well, it was taken on first ROI and the time interval indicates 4 hours and 30 minutes.
+![alt text](https://github.com/nquintanaparrilla/OHSU-postbacc-proyect/blob/d82a9f91822014748dbf2f14079faa0709c2cf97/images/sorting_example.png)
 
 ## 2. Stabilizing ([stabilize.ijm](image_analysis/stabilize.ijm))
 A [FIJI](https://imagej.net/software/fiji/) macro script uses the [StackReg](https://bigwww.epfl.ch/thevenaz/stackreg/) and [TurboReg](https://bigwww.epfl.ch/thevenaz/turboreg/) plugins register all images like an image sequence and reduce shakiness. It facilitates cell visualization when observation proliferation over time. This is necessary because every image taken at the same ROI, regardless of the interval, will be positioned slightly differently due to the IncuCyte S3’s processing and camera positioning, and it helps the Cellpose model segment more efficiently.
 
-<img src="images/A2_1_sorted.gif" width="0=400" height="400">
 Figure 2. Image sequence A2_1 before stabilizing step.
 
+<img src="images/A2_1_sorted.gif" width="0=400" height="400">
+<p></p>
 
-<img src="images/A2_1_stabilized.gif" width="500" height="400">
 Figure 3. Image sequence A2_1 after stabilizing step.
 
+<img src="images/A2_1_stabilized.gif" width="500" height="400">
+<p></p>
+
+Figure 4. A side-by-side image sequence comparison on the first 3 30-minute intervals of the first ROI in the A1 well. The white background indicates how the image was moved to maintain consistency. THe white box is also visible, which the cropping step will find to crop.
 
 <img src="images/stabilizing_example.png" width="900" height="500">
-Figure 4. A side-by-side image sequence comparison on the first 3 30-minute intervals of the first ROI in the A1 well. The white background indicates how the image was moved to maintain consistency. This is the white box the the cropping step will find to crop.
+<p></p>
 
 ## 3. Cropping ([cropping.py](image_analysis/cropping.py))
 This python script  crops the white background created when the images were moved in frame to be stabilized. This script can also indicate if an image sequence was stabilized incorrectly due to debris or additional noise, which can interfere with the FIJI plugins.
 
-![cropped sequence](images/A2_1_cropped.gif)
 Figure 5. Image sequence A2_1 after cropping step.
+
+![cropped sequence](images/A2_1_cropped.gif)
+
 
 ## 4. Quality Control
 In this step, depending on where the previous steps failed, image sequences are stabilized and/or cropped manually. This usually occurs with 5-10 ROIs per experiment plate. This can happen if chunks of debri are big enough to disrupt the sequence or if the incorrect plate dimensions were chosen in the IncuCyte before imaging. Otherwise, all the previous steps work just fine.
@@ -52,8 +59,10 @@ This python script utilizes a trained [Cellpose](https://www.nature.com/articles
 
 It is crucial to have a trained model for this step. A Cellpose model can be trained with just 500-1000 images of ground truths masks. However, the more images the model is trained with, the more efficiently it generates masks.
 
-<img src="images/masks1.png" width="500" height="400">  <img src="images/masks2.png" width="500" height="400">
 Figure 6. Generated masks using Cellpose [GUI].
+
+<img src="images/masks1.png" width="500" height="400">  <img src="images/masks2.png" width="500" height="400">
+
 
 ## 6. Counting ([cell_counting.py](image_analysis/cell_counting.py))
 Finally, this script counts all the generated masks from an ROI as cells.
@@ -64,16 +73,16 @@ Finally, this script counts all the generated masks from an ROI as cells.
 |A2_2       | 89 | 96 | ... | 1084 |
 
 ## Sample videos after stabilization and cropping:
-[![MCF10A WT - No EGF](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=-XLfIhz3GHA&ab_channel=NataliaQuintanaParrilla)]
+[![MCF10A WT - No EGF](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=-XLfIhz3GHA&ab_channel=NataliaQuintanaParrilla)
 
 
-[![MCF10A WT - 10ng/mL](https://youtu.be/HWFD3kKy6NY)]
+[![MCF10A WT - 10ng/mL](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=HWFD3kKy6NY&ab_channel=NataliaQuintanaParrilla)
 
 
-[![MCF10A BRCA1+/- No EGF](https://youtu.be/WdU7pWYCmfU)]
+[![MCF10A BRCA1+/- No EGF](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://youtu.be/WdU7pWYCmfU)
 
 
-[![MCF10A BRCA1+/- - 10ng/mL](https://youtu.be/3sQ2YhjJNU0)]
+[![MCF10A BRCA1+/- - 10ng/mL](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://youtu.be/3sQ2YhjJNU0)
 
 
 # Future objectives:
