@@ -41,7 +41,7 @@ Figure 4. A side-by-side image sequence comparison on the first 3 30-minute inte
 ## 3. Cropping ([cropping.py](image_analysis/cropping.py))
 This python script  crops the white background created when the images were moved in frame to be stabilized. This script can also indicate if an image sequence was stabilized incorrectly due to debris or additional noise, which can interfere with the FIJI plugins.
 
-![cropped sequence](
+![cropped sequence](images/A2_1_cropped.gif)
 Figure 5. Image sequence A2_1 after cropping step.
 
 ## 4. Quality Control
