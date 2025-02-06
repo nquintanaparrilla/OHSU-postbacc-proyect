@@ -73,16 +73,16 @@ Finally, this script counts all the generated masks from an ROI as cells.
 |A2_2       | 89 | 96 | ... | 1084 |
 
 ## Sample videos after stabilization and cropping:
-[![MCF10A WT - No EGF](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=-XLfIhz3GHA&ab_channel=NataliaQuintanaParrilla)
+[MCF10A WT - No EGF](https://www.youtube.com/watch?v=-XLfIhz3GHA&ab_channel=NataliaQuintanaParrilla)
 
 
-[![MCF10A WT - 10ng/mL](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=HWFD3kKy6NY&ab_channel=NataliaQuintanaParrilla)
+[MCF10A WT - 10ng/mL](https://www.youtube.com/watch?v=HWFD3kKy6NY&ab_channel=NataliaQuintanaParrilla)
 
 
-[![MCF10A BRCA1+/- No EGF](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://youtu.be/WdU7pWYCmfU)
+[MCF10A BRCA1+/- No EGF](https://youtu.be/WdU7pWYCmfU)
 
 
-[![MCF10A BRCA1+/- - 10ng/mL](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://youtu.be/3sQ2YhjJNU0)
+[MCF10A BRCA1+/- - 10ng/mL](https://youtu.be/3sQ2YhjJNU0)
 
 
 # Future objectives:
