@@ -2,9 +2,9 @@ from cellpose import models, io
 import os
 
 def cellpose_segmentation(experiment_plate):
-    cropped_dir = f'/home/groups/heiserlab_genomics/rawdata/mouse_breast/MFT_C3Tag/{experiment_plate}_data/cropped_{experiment_plate}'
-    model_path = f'/home/groups/heiserlab_genomics/rawdata/mouse_breast/MFT_C3Tag/train_model_tumor_cells/models/tumor_CP_model_3'
-    segmented_dir = f'/home/groups/heiserlab_genomics/rawdata/mouse_breast/MFT_C3Tag/{experiment_plate}_data/segmented_{experiment_plate}'
+    cropped_dir = f'/path/to/your/folder/{experiment_plate}_data/cropped_{experiment_plate}'
+    model_path = '/path/to/your/cellpose/model'
+    segmented_dir = f'/path/to/your/folder/{experiment_plate}_data/segmented_{experiment_plate}'
     os.makedirs(segmented_dir, exist_ok=True)
 
     use_gpu = True
