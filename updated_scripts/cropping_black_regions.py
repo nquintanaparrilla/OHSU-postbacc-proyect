@@ -74,10 +74,10 @@ def crop_images_to_bounding_box(image_files, crop_box, save_dir, not_cropped_dir
 
 
 def crop_stabilized_images(experiment_plate):
-    stabilized_dir = f'Z:/rawdata/mouse_breast/MFT_C3Tag/{experiment_plate}_data/stabilized_{experiment_plate}/'
-    cropped_dir = f'Z:/rawdata/mouse_breast/MFT_C3Tag/{experiment_plate}_data/cropped_{experiment_plate}/'
-    not_cropped_dir = f'Z:/rawdata/mouse_breast/MFT_C3Tag/{experiment_plate}_data/not_cropped_{experiment_plate}/'
-    qc_dir = f'Z:/rawdata/mouse_breast/MFT_C3Tag/{experiment_plate}_data/cropped_{experiment_plate}/'
+    stabilized_dir = f'/path/to/your/folder/{experiment_plate}_data/stabilized_{experiment_plate}/'
+    cropped_dir = f'/path/to/your/folder/{experiment_plate}_data/cropped_{experiment_plate}/'
+    not_cropped_dir = f'/path/to/your/folder/{experiment_plate}_data/not_cropped_{experiment_plate}/'
+    qc_dir = f'/path/to/your/folder/{experiment_plate}_data/cropped_{experiment_plate}/'
 
     # Ensure the QC directory exists
     os.makedirs(qc_dir, exist_ok=True)
