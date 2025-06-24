@@ -11,7 +11,7 @@ def count_masks_from_segmentation(image_path):
     return num_masks
 
 def count_masks_as_cells (experiment_plate):
-    segmented_dir = f'Z:/rawdata/mouse_breast/MFT_C3Tag/{experiment_plate}_data/segmented_{experiment_plate}/'
+    segmented_dir = f'/path/to/your/folder/{experiment_plate}_data/segmented_{experiment_plate}/'
 
     subdirs = sorted(os.listdir(segmented_dir))
     data = {}
@@ -33,7 +33,7 @@ def count_masks_as_cells (experiment_plate):
 
     # Build and save the DataFrame
     df = pd.DataFrame({key: pd.Series(val) for key, val in data.items()})
-    output_csv_path = os.path.join(segmented_dir, f'Z:/rawdata/mouse_breast/MFT_C3Tag/{experiment_plate}_data/{experiment_plate}_cell_counts.csv')
+    output_csv_path = os.path.join(segmented_dir, f'/path/to/your/folder/{experiment_plate}_data/{experiment_plate}_cell_counts.csv')
     df.to_csv(output_csv_path, index=False)
 
     print(f"Saved test summary to: {output_csv_path}")
