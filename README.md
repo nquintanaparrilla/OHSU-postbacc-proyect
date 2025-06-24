@@ -158,7 +158,7 @@ Script path 2: [updated_scripts/cropping_white_regions.py](updated_scripts/cropp
 
 Bash script for headless run: [updated_scripts/cropping_bash.sh](updated_scripts/cropping_bash.sh)
 
-How to run: Preferably in a conda environment through command line or a jupyter notebook (through VS code). To run faster, this script also works using ARC as batch job. If you choose to invert the images in the stabilizing step, then you can use the `cropping_white_regions.py` script. Otherwise, use the `cropping_black_regions.py` script.
+How to run: Preferably in a conda environment through command line or a jupyter notebook (through VS code). To run faster, this script also works using a virtual/Compute cluster as batch job. If you choose to invert the images in the stabilizing step, then you can use the `cropping_white_regions.py` script. Otherwise, use the `cropping_black_regions.py` script.
 
 Running time: 1 day locally (or 4-6 hours in a cluster). Good thing about this script is that you can run them as soon as they are stabilized because if an ROI is already processed, the script will skip it.
 
@@ -200,7 +200,7 @@ Script path: [updated_scripts/cellpose_segmentation_bash.py](updated_scripts/cel
 
 Bash script path: [updated_scripts/cellpose_segmentation_bash.sh](updated_scripts/cellpose_segmentation_bash.sh)
 
-How to run: Preferably through a bash script by submitting an ARC job. You need to prepare a conda environment in ARC with cellpose and python3 installed. Here you can find the [Cellpose documentation](https://cellpose.readthedocs.io/en/latest/) for assistance in Cellpose model training.
+How to run: Preferably through a bash script by submitting an Virtual/Compute cluster job. You need to prepare a conda environment in Virtual/Compute cluster with cellpose and python3 installed. Here you can find the [Cellpose documentation](https://cellpose.readthedocs.io/en/latest/) for assistance in Cellpose model training.
 
 Running time: 4-6 hours. Please don't run locally.
 
@@ -232,7 +232,7 @@ cellpose_segmentation(experiment_plate="TU00701")
 
 **Script path**: [updated_scripts/cell_counting.py](updated_scripts/cell_counting.py)
 
-**How to run**: Locally works well. If run in an ARC job, the outputs differ. When run locally, the outputs match the mask counts calculated in the Cellpose GUI. 
+**How to run**: Locally works well. If run in an Virtual/Compute cluster job, the outputs differ. When run locally, the outputs match the mask counts calculated in the Cellpose GUI. 
 
 **Running time**: 4-6 hours
 
