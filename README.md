@@ -212,8 +212,9 @@ Modifiable chunks:
 ```{python eval=FALSE}
 def cellpose_segmentation(experiment_plate):
     cropped_dir = f'/path/to/your/folder/{experiment_plate}_data/cropped_{experiment_plate}'
-    model_path = f'/path/to/your/folder/models/your_cellpose_model'
+    model_path = '/path/to/your/cellpose/model'
     segmented_dir = f'/path/to/your/folder/{experiment_plate}_data/segmented_{experiment_plate}'
+    os.makedirs(segmented_dir, exist_ok=True)
 ```
 
 2. Example function run:
