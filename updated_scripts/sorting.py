@@ -3,8 +3,8 @@ import shutil
 import re
 
 def sort_exported_incucyte_images(experiment_plate):
-    raw_folder = f'Z:/rawdata/mouse_breast/MFT_C3Tag/INCUCYTE/{experiment_plate}'
-    output_folder = f'Z:/rawdata/mouse_breast/MFT_C3Tag/{experiment_plate}_data/sorted_{experiment_plate}'
+    raw_folder = f'/path/to/your/folder/{experiment_plate}'
+    output_folder = f'/path/to/your/folder/{experiment_plate}_data/sorted_{experiment_plate}'
 
     os.makedirs(output_folder, exist_ok=True)
 
