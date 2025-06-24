@@ -1,5 +1,6 @@
-rawDir = File.getDirectory("Z:/rawdata/mouse_breast/MFT_C3Tag/TU00901_data/sorted_TU00901/*");
-stabilizedDir = File.getDirectory("Z:/rawdata/mouse_breast/MFT_C3Tag/TU00901_data/stabilized_TU00901/*");
+// Substitute {experiment_plate} with the actual name
+rawDir = File.getDirectory("/path/to/your/folder/{experiment_plate}_data/sorted_{experiment_plate}/*");
+stabilizedDir = File.getDirectory("/path/to/your/folder/{experiment_plate}_data/stabilized_{experiment_plate}/*");
 File.makeDirectory(stabilizedDir);
 listdir = getFileList(rawDir);
 
