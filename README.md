@@ -3,7 +3,7 @@ Updated June 23, 2025
 # Image Analysis Pipeline Documentation for Incucyte S3 exported images and cell culture experiments
 
 ## Overview
-This markdown file breaks down each image analysis step, from exporting raw files from the IncuCyte S3 to the final phenotype outputs like proliferation, morphology and motility. Please reach out via email or GitHub with any issues—I'm happy to help!
+This markdown file breaks down each image analysis step, from exporting raw files from the IncuCyte S3 to the final phenotype outputs like proliferation, morphology and motility. I worked on this pipeline for my postbacc project at Oregon Health and Science University (OHSU) PREP program. Please reach out via email or GitHub with any issues—I'm happy to help!
 
 ## Prerequisites
 - Software: Python 3.x, Fiji (ImageJ), R 4.x, etc.
