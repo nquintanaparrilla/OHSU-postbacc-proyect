@@ -1,5 +1,6 @@
-segmentedDir = "Z:/rawdata/mouse_breast/MFT_C3Tag/TU00801_data/segmented_TU00801/";
-morphDir = "Z:/rawdata/mouse_breast/MFT_C3Tag/TU00801_data/morphology_TU00801/";
+// Substitute {experiment_plate} with the actual name
+segmentedDir = "/path/to/your/folder/{experiment_plate}_data/segmented_{experiment_plate}/";
+morphDir = "/path/to/your/folder/{experiment_plate}_data/morphology_{experiment_plate}/";
 
 File.makeDirectory(morphDir);
 listdir = getFileList(segmentedDir);
